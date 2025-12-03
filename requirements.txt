@@ -1,5 +1,16 @@
+# --- Flask Web Server ---
 flask
-torch
-torchvision
-ultralytics
+
+# --- Image Processing ---
 pillow
+
+# --- Array & Math utilities ---
+numpy
+
+# --- YOLO (Ultralytics) ---
+ultralytics
+
+# --- PyTorch (CPU Only - Lightweight & compatible with Railway) ---
+torch==2.2.0+cpu
+torchvision==0.17.0+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
