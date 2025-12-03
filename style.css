@@ -1,0 +1,370 @@
+/* ========== Global Reset ========== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #F2F7F2;
+    color: #234127;
+}
+
+/* ========== Navbar ========== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    background-color: #E7F3E8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #2E7D32;
+}
+
+.logo .leaf {
+    font-size: 1.4rem;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    padding: 0.4rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    color: #335533;
+}
+
+.navbar nav a.active {
+    background-color: #2E7D32;
+    color: #fff;
+}
+
+/* ========== Home Page Layout (index.html) ========== */
+
+.page {
+    max-width: 1120px;
+    margin: 2.5rem auto 3rem;
+    padding: 0 1.5rem;
+}
+
+/* Hero Layout */
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+/* Hero Text Section */
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 999px;
+    background-color: #E1F3E1;
+    color: #2E7D32;
+}
+
+.hero-title {
+    font-size: 2.3rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.hero-subtitle {
+    margin: 0;
+    color: #476149;
+    font-size: 0.98rem;
+}
+
+/* Buttons (used in Home and Classifier) */
+
+.primary-btn,
+.ghost-btn {
+    border: none;
+    border-radius: 999px;
+    padding: 0.7rem 1.6rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.primary-btn {
+    background-color: #2E7D32;
+    color: #fff;
+}
+
+.primary-btn:hover {
+    background-color: #256628;
+    transform: translateY(-1px);
+}
+
+.ghost-btn {
+    background-color: transparent;
+    color: #2E7D32;
+    border: 1px solid rgba(46, 125, 50, 0.35);
+}
+
+.ghost-btn:hover {
+    background-color: #E4F3E5;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* Meta Information Under Buttons */
+
+.hero-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.82rem;
+    color: #547054;
+}
+
+.meta-label {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    color: #7A957A;
+}
+
+.meta-value {
+    margin-top: 0.2rem;
+}
+
+/* Hero Image Card (right side) */
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-card {
+    width: 100%;
+    max-width: 360px;
+    background-color: #FFFFFF;
+    border-radius: 26px;
+    padding: 1.3rem 1.5rem;
+    box-shadow: 0 18px 40px rgba(0, 80, 20, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hero-image-placeholder {
+    border-radius: 18px;
+    background-color: #ffffff;
+    border: 1px dashed rgba(46, 125, 50, 0.35);
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Full-size plant image filling the hero card */
+
+.hero-image-placeholder img.hero-plant-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* Pills under hero card */
+
+.hero-card-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pill {
+    padding: 0.25rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+}
+
+.pill-green {
+    background-color: #E3F4E5;
+    color: #2E7D32;
+}
+
+.pill-muted {
+    background-color: #EEF3EE;
+    color: #566C56;
+}
+
+/* Feature cards under hero */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.4rem;
+}
+
+.feature-card {
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    padding: 1.1rem 1.3rem;
+    box-shadow: 0 10px 28px rgba(0, 80, 20, 0.05);
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #2E7D32;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #3D573D;
+}
+
+/* ========== Classifier Page (predict.html) ========== */
+
+.container {
+    max-width: 720px;
+    margin: 2.5rem auto 3rem;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 1.6rem;
+    color: #2E7D32;
+}
+
+.page-subtitle {
+    color: #4D654D;
+    font-size: 0.95rem;
+}
+
+/* Upload box */
+
+.upload-box {
+    margin: 1.7rem auto 1rem;
+    padding: 1.3rem 1.5rem;
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    border: 1px solid #DCECDC;
+    max-width: 520px;
+}
+
+#imageUpload {
+    width: 100%;
+}
+
+/* Center classify button under upload box */
+
+.upload-actions {
+    display: flex;
+    justify-content: center;
+}
+
+/* Extra spacing for classify button (inherits primary-btn style) */
+
+.classify-btn {
+    margin-top: 1rem;
+}
+
+/* Results cards for both models */
+
+.results-grid {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.model-card {
+    flex: 1 1 260px;
+    max-width: 320px;
+    background-color: #FFFFFF;
+    padding: 1.1rem 1.3rem;
+    border-radius: 18px;
+    text-align: left;
+    box-shadow: 0 10px 28px rgba(0, 80, 20, 0.07);
+}
+
+.model-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2E7D32;
+}
+
+.model-card p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: #3D573D;
+}
+
+/* ========== Responsive Tweaks ========== */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 0.9rem 1.5rem;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+}
+/* ==== Results grid side-by-side ==== */
+.results-grid {
+    display: none;            /* hidden by default */
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.model-card {
+    width: 280px;
+}
