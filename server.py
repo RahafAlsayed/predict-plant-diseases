@@ -144,5 +144,12 @@ def predict_api():
     })
 
 
+# -------------------------------------
+# ENTRY POINT (LOCAL + RAILWAY)
+# -------------------------------------
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+    # Railway يعطينا PORT في متغير بيئة، ولو مافي يستخدم 5000 (للجهاز المحلي)
+    port = int(os.environ.get("PORT", 5000))
+    # host=0.0.0.0 ضروري عشان يشتغل على السيرفر الخارجي
+    app.run(host="0.0.0.0", port=port)
