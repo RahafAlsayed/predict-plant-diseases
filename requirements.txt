@@ -2,6 +2,5 @@ flask
 pillow
 numpy
 ultralytics
-
-torch==2.9.1
-torchvision==0.22.0
+torch
+torchvision
